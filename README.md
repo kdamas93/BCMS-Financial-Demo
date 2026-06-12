@@ -1,14 +1,132 @@
-# BCMS Financial Demo API
+# BCMS Financial Demo
 
-## Auth
+A modern financial management backend API built with Node.js, Express, TypeScript, Prisma ORM, and PostgreSQL.
+
+---
+
+## Features
+
+* JWT Authentication
+* User Management
+* Account Management
+* Category Management
+* Transaction Management
+* Budget Management
+* Dashboard Analytics
+* Zod Validation
+* Error Handling Middleware
+* Logging with Winston
+* Repository Pattern Architecture
+
+---
+
+## Tech Stack
+
+* Node.js
+* Express
+* TypeScript
+* Prisma ORM
+* PostgreSQL
+* JWT
+* Zod
+* Winston
+
+---
+
+## Architecture
+
+This project follows a layered architecture:
+
+```text
+Controller
+    ↓
+Service
+    ↓
+Repository
+    ↓
+Prisma ORM
+    ↓
+PostgreSQL
+```
+
+---
+
+## Project Structure
+
+```text
+src
+│
+├── auth
+├── config
+├── controllers
+├── dtos
+├── middlewares
+├── repositories
+├── routes
+├── services
+├── utils
+├── validators
+├── app.ts
+└── server.ts
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/kdamas93/BCMS-Financial-Demo.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Generate Prisma Client:
+
+```bash
+npx prisma generate
+```
+
+Run migrations:
+
+```bash
+npx prisma db push
+```
+
+Start the server:
+
+```bash
+npm run dev
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file:
+
+```env
+DATABASE_URL=
+JWT_SECRET=
+PORT=
+```
+
+---
+
+## API Endpoints
+
+### Authentication
 
 | Method | Endpoint        |
 | ------ | --------------- |
 | POST   | /api/auth/login |
 
----
-
-## Users
+### Users
 
 | Method | Endpoint       |
 | ------ | -------------- |
@@ -18,9 +136,7 @@
 | PUT    | /api/users/:id |
 | DELETE | /api/users/:id |
 
----
-
-## Accounts
+### Accounts
 
 | Method | Endpoint          |
 | ------ | ----------------- |
@@ -30,9 +146,7 @@
 | PUT    | /api/accounts/:id |
 | DELETE | /api/accounts/:id |
 
----
-
-## Categories
+### Categories
 
 | Method | Endpoint            |
 | ------ | ------------------- |
@@ -42,9 +156,7 @@
 | PUT    | /api/categories/:id |
 | DELETE | /api/categories/:id |
 
----
-
-## Transactions
+### Transactions
 
 | Method | Endpoint              |
 | ------ | --------------------- |
@@ -54,9 +166,7 @@
 | PUT    | /api/transactions/:id |
 | DELETE | /api/transactions/:id |
 
----
-
-## Budgets
+### Budgets
 
 | Method | Endpoint         |
 | ------ | ---------------- |
@@ -66,10 +176,26 @@
 | PUT    | /api/budgets/:id |
 | DELETE | /api/budgets/:id |
 
----
-
-## Dashboard
+### Dashboard
 
 | Method | Endpoint               |
 | ------ | ---------------------- |
 | GET    | /api/dashboard/summary |
+
+---
+
+## Future Improvements
+
+* React + TypeScript Frontend
+* Tailwind CSS
+* Role-Based Access Control (RBAC)
+* Docker Support
+* CI/CD Pipeline
+* Swagger Documentation
+* Unit and Integration Tests
+
+---
+
+## License
+
+MIT
