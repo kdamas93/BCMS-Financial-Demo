@@ -8,7 +8,7 @@ import userRoutes from './routes/user.routes';
 import { errorMiddleware } from "./middlewares/error.middleware";
 
 
-import authRoutes from "./auth/auth.routes";
+import authRoutes from "./routes/auth.routes";
 import accountRoutes from "./routes/account.routes";
 import categoryRoutes from "./routes/category.routes";
 import transactionRoutes from "./routes/transaction.routes";
