@@ -91,11 +91,46 @@ export class UserRepository {
         email: string
     ) => {
     
-        return prisma.user.findUnique({
-            where: {
-                email
-            }
-        });
+        console.log(
+            "DATABASE_URL exists:",
+            !!process.env.DATABASE_URL
+        );
+    
+        console.log(
+            "JWT_SECRET exists:",
+            !!process.env.JWT_SECRET
+        );
+    
+        console.log(
+            "Searching user:",
+            email
+        );
+    
+        try {
+    
+            const user =
+                await prisma.user.findUnique({
+    
+                    where: {
+                        email
+                    }
+    
+                });
+    
+            console.log("User found:", !!user);
+    
+            return user;
+    
+        } catch (error) {
+    
+            console.error(
+                "Prisma error:",
+                error
+            );
+    
+            throw error;
+    
+        }
     
     };
 
